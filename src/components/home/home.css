@@ -1,0 +1,120 @@
+.nav{
+    background-color: var(--gray-05);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.my-brand {
+    flex-basis: 20%;
+}
+.nav-icons a{
+    padding-left: 1em;
+    transition: transform .2s;
+}
+.nav-icons a:hover{
+    transform: scale(1.1)
+}
+.nav-icons a span{
+    font-size: 0.8rem;
+}
+.nav-icons a i{
+    font-size: 1.5rem;
+}
+
+main {
+    padding: 0 2em;
+    min-height: 100vh;
+}
+
+main section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 100%;
+}
+
+main section .content {
+    width: 50%;
+    padding: 2em 5em;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main section .content h1 {
+    font-size: 3rem;
+}
+
+main section .content p {
+    margin-top: 1em;
+    font-size: 2rem;
+}
+
+main section .represent-img {
+    width: 50%;
+    height: 100vh;
+}
+
+main section .represent-img img {
+    width: 100%;
+    height: 100%;
+}
+
+main .popular-courses {
+    flex-direction: column;
+    align-items: center;
+}
+main section h2 {
+    border-bottom: 2px solid var(--gray-90);
+}
+
+main .popular-courses .courses-container {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    padding: 1em;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+main .top-categories {
+    flex-direction: column;
+    align-items: center;
+}
+
+main .top-categories .categories-container {
+    padding-top: 2rem;
+    width: 90%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main .top-categories .categories-container .card-container {
+    display: block;
+    background-color: var(--gray-00);
+    width: 15rem;
+    height: 15rem;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    transition: transform .2s
+}
+main .top-categories .categories-container .card-container:hover{
+    transform: scale(1.1)
+}
+main .top-categories .categories-container .card-container .img-wrapper {
+    width: 100%;
+    height: 90%;
+}
+
+main .top-categories .categories-container .card-container .img-wrapper img {
+    height: 100%;
+    width: 100%;
+}
