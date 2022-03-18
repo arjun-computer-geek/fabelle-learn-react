@@ -1,36 +1,37 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
   return (
     <nav className="nav nav-boxshadow">
-        <a href="/" className="brand my-brand">
+        <Link to="/" className="brand my-brand">
             <div className="logo">
-                <img loading="lazy" src="./images/nav/nav-logo.png" alt="logo" />
+                <img  src="./images/nav/nav-logo.png" alt="logo" />
             </div>
             <h1 className="brand-name">
                 Fabelle Learn
             </h1>
-        </a>
+        </Link>
         <div className="nav-links">
-            <a className="nav-link" href="/categories.html">Categories</a>
+            <Link className="nav-link" to="/categories">Categories</Link>
         </div>
         <div className="nav-search">
             <i className="fa fa-search"></i>
             <input type="text" placeholder="Type to search" />
         </div>
         <div className="nav-icons">
-            <a href="/login.html">
+            <Link to="/login">
                 <i className="fa fa-user"></i>
                 <span className="nav-icon-text">Login</span>
-            </a>
-            <a href="./wishlist.html">
+            </Link>
+            <Link to="./wishlist">
                 <i className="fa fa-heart" aria-hidden="true"></i>
                 <span className="nav-icon-text">Wishlist</span>
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/cart">
                 <i className="fa fa-shopping-cart"></i>
                 <span className="nav-icon-text">cart</span>
-            </a>
+            </Link>
         </div>
     </nav>
   )

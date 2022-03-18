@@ -1,0 +1,14 @@
+.container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.main-content {
+    flex: 1 0 75%;
+    padding: 2.5em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+    align-items: center;
+}
