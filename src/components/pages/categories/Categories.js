@@ -1,7 +1,56 @@
+import { Card, Sidebar } from "components"
+import './categories.css'
+
 export const Categories = () => {
     return(
         <>
-        <h1>Categories</h1>
+        <main className="container">
+        <Sidebar />
+        <div class="main-content">
+        <Card
+            img={"./images/homepage/webdev.png"}
+            productName={"The complete 2022 Fullstack Web Developer Course"}
+            productOwner={"Arjun"}
+            noOfRatings={4352}
+            price={199}
+          />
+          <Card
+            img={"./images/homepage/webdev.png"}
+            productName={"The complete 2022 Fullstack Web Developer Course"}
+            productOwner={"Arjun"}
+            noOfRatings={4352}
+            price={199}
+          />
+          <Card
+            img={"./images/homepage/webdev.png"}
+            productName={"The complete 2022 Fullstack Web Developer Course"}
+            productOwner={"Arjun"}
+            noOfRatings={4352}
+            price={199}
+          />
+          <Card
+            img={"./images/homepage/webdev.png"}
+            productName={"The complete 2022 Fullstack Web Developer Course"}
+            productOwner={"Arjun"}
+            noOfRatings={4352}
+            price={199}
+          />
+          <Card
+            img={"./images/homepage/webdev.png"}
+            productName={"The complete 2022 Fullstack Web Developer Course"}
+            productOwner={"Arjun"}
+            noOfRatings={4352}
+            price={199}
+          />
+          <Card
+            img={"./images/homepage/webdev.png"}
+            productName={"The complete 2022 Fullstack Web Developer Course"}
+            productOwner={"Arjun"}
+            noOfRatings={4352}
+            price={199}
+          />
+        </div>
+        </main>
         </>
     )
 }

@@ -1,3 +1,4 @@
+export { Sidebar } from './template/sidebar/Sidebar'
 export {Home} from './pages/home/Home'
 export {Card} from './template/Card'
 export {CardCategory} from './template/CardCategory'

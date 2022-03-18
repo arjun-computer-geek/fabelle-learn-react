@@ -1,0 +1,86 @@
+aside {
+  flex: 1 0 25%;
+  height: calc(100vh - 5rem);
+  padding: 1.5em;
+  position: sticky;
+  top: 5rem;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.aside-container {
+  border-bottom: 1px solid var(--gray-45);
+  width: 100%;
+  padding: 1em 0;
+}
+
+.aside-content .aside-row {
+  margin: 1em;
+  word-spacing: -6px;
+}
+
+.aside-row input {
+  cursor: pointer;
+}
+
+.aside-row .row-data {
+  font-size: 1rem;
+}
+
+.aside-row .row-data-num {
+  font-size: 0.8rem;
+  color: var(--gray-45);
+}
+
+.aside-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.aside-header .filter-btn {
+  padding: 0.4em;
+  border: 1px solid var(--gray-45);
+}
+
+.aside-header .filter-btn:hover {
+  background-color: var(--gray-00);
+  cursor: pointer;
+}
+
+.aside-header .filter-btn i {
+  font-size: 2rem;
+}
+
+.aside-header .filter-btn span {
+  font-size: 1.5rem;
+}
+
+.aside-header .sort-btn {
+  padding: 0.4em;
+  border: 1px solid var(--gray-45);
+  position: relative;
+}
+
+.aside-header .sort-btn:hover,
+.sort-btn select:hover {
+  background-color: var(--gray-00);
+  cursor: pointer;
+}
+
+.aside-header .sort-btn span {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+}
+
+.aside-header .sort-btn select {
+  background-color: transparent;
+  margin-top: 1em;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
