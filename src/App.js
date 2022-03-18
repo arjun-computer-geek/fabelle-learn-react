@@ -1,14 +1,17 @@
 import React from "react";
 import { 
   Footer, 
-  Home, 
-  Navbar,
-  Categories
+  Navbar
 } from "components";
+
 import { 
   Route, 
   Routes 
 } from "react-router-dom";
+import { 
+  Categories, 
+  Home 
+} from "pages";
 
 const App = () => {
   return (

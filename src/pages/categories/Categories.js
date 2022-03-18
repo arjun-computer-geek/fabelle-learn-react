@@ -6,7 +6,7 @@ export const Categories = () => {
         <>
         <main className="container">
         <Sidebar />
-        <div class="main-content">
+        <div className="main-content">
         <Card
             img={"./images/homepage/webdev.png"}
             productName={"The complete 2022 Fullstack Web Developer Course"}
@@ -51,6 +51,7 @@ export const Categories = () => {
           />
         </div>
         </main>
+        
         </>
     )
 }

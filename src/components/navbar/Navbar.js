@@ -6,7 +6,7 @@ export const Navbar = () => {
     <nav className="nav nav-boxshadow">
         <Link to="/" className="brand my-brand">
             <div className="logo">
-                <img loading="lazy" src="./images/nav/nav-logo.png" alt="logo" />
+                <img  src="./images/nav/nav-logo.png" alt="logo" />
             </div>
             <h1 className="brand-name">
                 Fabelle Learn
