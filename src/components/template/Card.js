@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({img,productName, productOwner, noOfRatings, price  }) => {
+export const Card = ({img,productName, productOwner, noOfRatings, price  }) => {
     return (
         <div className="card">
             <img loading="lazy" src={img} alt="product" />
@@ -24,5 +24,3 @@ const Card = ({img,productName, productOwner, noOfRatings, price  }) => {
         </div>
     )
 }
-
-export default Card

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardCategory = ({img, category}) => {
+export const CardCategory = ({img, category}) => {
     return (
         <a href="#" className="card-container">
             <div className="img-wrapper">
@@ -10,5 +10,3 @@ const CardCategory = ({img, category}) => {
         </a>
     )
 }
-
-export default CardCategory

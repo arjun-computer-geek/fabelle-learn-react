@@ -1,0 +1,5 @@
+export {Home} from './pages/home/Home'
+export {Card} from './template/Card'
+export {CardCategory} from './template/CardCategory'
+export {Navbar} from './template/Navbar'
+export {Footer} from './template/footer/Footer'
