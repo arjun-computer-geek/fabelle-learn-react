@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <nav className="nav nav-boxshadow">
         <a href="/" className="brand my-brand">
@@ -35,5 +35,3 @@ const Navbar = () => {
     </nav>
   )
 }
-
-export default Navbar

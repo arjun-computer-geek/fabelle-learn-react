@@ -1,4 +1,4 @@
-const categories = [
+export const categories = [
     {
         img: "./images/homepage/development.svg",
         category: "Developement"
@@ -34,5 +34,3 @@ const categories = [
         category: "IT and Software"
     }
 ]
-
-export default categories;
