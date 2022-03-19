@@ -1,0 +1,47 @@
+services:
+  monogdb:
+    image: mongo
+    restart: always
+    environment:
+      - "MONGO_INITDB_ROOT_USERNAME: Arjun"
+      - "MONGO_INITDB_ROOT_PASSWORD: Arjun@1234"
+    container_name: mongo-server
+    ports:
+      - "27017"
+    volumes:
+      - db:/data/db
+    networks:
+    - ecommerce-network
+
+  backend:
+    depends_on:
+      - mongodb
+    image: ecommerce-backend
+    container_name: backend-server
+    restart: always
+    ports:
+      - "8000:8000"
+    tty: true
+    networks: 
+      - ecommerce-network
+    volumes:
+      - ./:/backend/db
+
+  frontend:
+    depends_on:
+      - backend
+    image: ecommerce-frontend
+    container_name: frontend-app
+    restart: always
+    ports:
+      - "3000:3000"
+    tty: true
+    networks: 
+      - ecommerce-network
+    volumes:
+      - ./:/frontend/db
+
+volumes:
+  db:
+networks:
+  ecommerce-network:
