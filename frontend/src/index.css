@@ -1,3 +1,5 @@
+/* component library link */
+@import url('https://fabelleui.netlify.app/components/fabelle-ui.css');
 :root {
     --theme-color: #0a0a23;
     --yellow-gold: #ffbf00;
