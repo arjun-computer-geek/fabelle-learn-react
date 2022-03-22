@@ -16,7 +16,9 @@ services:
   backend:
     depends_on:
       - mongodb
-    image: ecommerce-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: backend-server
     restart: always
     ports:
@@ -25,12 +27,14 @@ services:
     networks: 
       - ecommerce-network
     volumes:
-      - ./:/backend/db
+      - ./backend/:/backend
 
   frontend:
     depends_on:
       - backend
-    image: ecommerce-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend-app
     restart: always
     ports:
@@ -39,7 +43,7 @@ services:
     networks: 
       - ecommerce-network
     volumes:
-      - ./:/frontend/db
+      - ./frontend:/frontend
 
 volumes:
   db:
