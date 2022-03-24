@@ -21,18 +21,7 @@ const productSchema = new mongoose.Schema({
         maxLength: [5, 'product price can not exced 5 character'],
         default: 0.0
     },
-    // images: [
-    //     {
-    //         public_id: {
-    //             type: String,
-    //             required: true
-    //         },
-    //         url: {
-    //             type: String,
-    //             required: true
-    //         },
-    //     }
-    // ],
+    
     image: String,
     category: {
         type: String,
@@ -77,11 +66,11 @@ const productSchema = new mongoose.Schema({
     //         }
     //     }
     // ],
-    user:{
-        type: mongoose.Schema.ObjectId,
-        ref: 'User',
-        required: true
-    },
+    // user:{
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: 'User',
+    //     required: true
+    // },
     createdAt: {
         type: Date,
         default: Date.now
