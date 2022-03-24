@@ -33,6 +33,7 @@ const productSchema = new mongoose.Schema({
     //         },
     //     }
     // ],
+    image: String,
     category: {
         type: String,
         required: [true, 'Please select category for this product'],
@@ -76,11 +77,11 @@ const productSchema = new mongoose.Schema({
     //         }
     //     }
     // ],
-    // user:{
-    //     type: mongoose.Schema.ObjectId,
-    //     ref: 'User',
-    //     required: true
-    // },
+    user:{
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
+    },
     createdAt: {
         type: Date,
         default: Date.now
