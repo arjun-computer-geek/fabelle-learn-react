@@ -1,54 +1,21 @@
 import { Card, Sidebar } from "components"
+import { useProduct } from "context/productContext"
 import './categories.css'
 
 export const Categories = () => {
+  const {products} = useProduct()
     return(
         <>
         <main className="container">
         <Sidebar />
         <div className="main-content">
-        <Card
-            img={"./images/homepage/webdev.png"}
-            productName={"The complete 2022 Fullstack Web Developer Course"}
-            productOwner={"Arjun"}
-            noOfRatings={4352}
-            price={199}
-          />
+          {products.map((product, index) => (
           <Card
-            img={"./images/homepage/webdev.png"}
-            productName={"The complete 2022 Fullstack Web Developer Course"}
-            productOwner={"Arjun"}
-            noOfRatings={4352}
-            price={199}
-          />
-          <Card
-            img={"./images/homepage/webdev.png"}
-            productName={"The complete 2022 Fullstack Web Developer Course"}
-            productOwner={"Arjun"}
-            noOfRatings={4352}
-            price={199}
-          />
-          <Card
-            img={"./images/homepage/webdev.png"}
-            productName={"The complete 2022 Fullstack Web Developer Course"}
-            productOwner={"Arjun"}
-            noOfRatings={4352}
-            price={199}
-          />
-          <Card
-            img={"./images/homepage/webdev.png"}
-            productName={"The complete 2022 Fullstack Web Developer Course"}
-            productOwner={"Arjun"}
-            noOfRatings={4352}
-            price={199}
-          />
-          <Card
-            img={"./images/homepage/webdev.png"}
-            productName={"The complete 2022 Fullstack Web Developer Course"}
-            productOwner={"Arjun"}
-            noOfRatings={4352}
-            price={199}
-          />
+          key={index} 
+          img={`http://localhost:8000/public/uploads/${product.image}`} productName={product.name} 
+          productOwner={product.owner} 
+          noOfReviews={product.numOfReviews} 
+          price={product.price} />))}
         </div>
         </main>
         

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Card = ({img,productName, productOwner, noOfRatings, price  }) => {
+export const Card = ({img,productName, productOwner, noOfReviews, price  }) => {
     return (
         <div className="card">
             <img loading="lazy" src={img} alt="product" />
@@ -13,7 +13,7 @@ export const Card = ({img,productName, productOwner, noOfRatings, price  }) => {
                     <i className="fa fa-star"></i>
                     <i className="fa fa-star-half-empty"></i>
                     <i className="fa fa-star-o"></i>
-                    <span>({noOfRatings})</span>
+                    <span>({noOfReviews})</span>
                 </div>
                 <div className="product-price">&#8377;<span>{price}</span></div>
                 <button className="btn product-add-to-cart-btn">Add to cart</button>
