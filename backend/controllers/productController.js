@@ -2,10 +2,13 @@ const Product = require('../models/productModel');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsync = require('../middlewares/catchAsync');
 
+
+
 // Create new product => /api/admin/product/new
 exports.createProduct =catchAsync( async (req, res, next) => {
 
-    const newProduct = await Product.create(req.body);
+    const product = {...req.body, image: req.file.filename}
+    const newProduct = await Product.create(product);
     
     res.status(201).json({
         success: true,
