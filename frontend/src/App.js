@@ -10,7 +10,8 @@ import {
 } from "react-router-dom";
 import { 
   Categories, 
-  Home 
+  Home ,
+  Cart
 } from "pages";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/cart" element={<Cart />}/>
       </Routes>
       <Footer />
     </>

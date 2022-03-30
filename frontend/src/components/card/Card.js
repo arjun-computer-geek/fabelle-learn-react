@@ -1,6 +1,8 @@
+import { useCart } from 'context/cartContex'
 import React from 'react'
 
-export const Card = ({img,productName, productOwner, noOfReviews, price  }) => {
+export const Card = ({id, img,productName, productOwner, noOfReviews, price}) => {
+    const {addToCart} = useCart()
     return (
         <div className="card">
             <img loading="lazy" src={img} alt="product" />
@@ -16,8 +18,8 @@ export const Card = ({img,productName, productOwner, noOfReviews, price  }) => {
                     <span>({noOfReviews})</span>
                 </div>
                 <div className="product-price">&#8377;<span>{price}</span></div>
-                <button className="btn product-add-to-cart-btn">Add to cart</button>
-                <button className="product-wish-btn">
+                <button className="btn product-add-to-cart-btn"onClick={() => addToCart(id)}>Add to cart</button>
+                <button className="product-wish-btn" >
                     <i className="fa fa-heart"></i>
                 </button>
             </div>

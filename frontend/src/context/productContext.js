@@ -1,23 +1,22 @@
 import { getProducts } from "actions/productActions";
-import axios from "axios";
 import { productReducer } from "reducers/productReducers";
-
-const {
-  createContext,
-  useContext,
-  useReducer
-} = require("react");
+const { createContext, useContext, useReducer, useEffect } = require("react");
 
 const productContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, {
     loading: false,
-    products: []
+    products: [],
   });
 
+  // fetching data
+  useEffect(() => {
+    getProducts(dispatch);
+  }, []);
+
   return (
-    <productContext.Provider value={{ state, dispatch }}>
+    <productContext.Provider value={{ state }}>
       {children}
     </productContext.Provider>
   );

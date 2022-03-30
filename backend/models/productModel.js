@@ -21,7 +21,7 @@ const productSchema = new mongoose.Schema({
         maxLength: [5, 'product price can not exced 5 character'],
         default: 0.0
     },
-    
+    stock: Number,
     image: String,
     category: {
         type: String,

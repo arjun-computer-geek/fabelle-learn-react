@@ -1,3 +1,4 @@
+export { CartCard } from './card/CartCard'
 export { Sidebar } from './sidebar/Sidebar'
 export {Card} from './card/Card'
 export {CardCategory} from './card/CardCategory'
