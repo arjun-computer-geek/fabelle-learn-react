@@ -17,7 +17,7 @@ export const getProducts = async (dispatch) => {
   } catch (error) {
     dispatch({
       type: ALL_PRODUCTS_FAIL,
-      payload: error,
+      payload: "Internal Server Error",
     });
   }
 };
