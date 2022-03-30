@@ -1,7 +1,7 @@
 import { addItemToCart, removeItemFromCart } from "actions/cartActions";
 import { cartReducer } from "reducers";
 
-const { createContext, useContext, useReducer, useEffect } = require("react");
+const { createContext, useContext, useReducer, useEffect, useState } = require("react");
 
 const cartContext = createContext();
 
@@ -15,10 +15,21 @@ const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, {
     cartItems: localCartItems,
   });
+  const[total, setTotal] = useState(0)
+
 
   // setting items to the localStorage
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+  }, [state.cartItems]);
+
+  // adding total price of cartItems
+  useEffect(() => {
+    setTotal(
+      state.cartItems.reduce((sum, product) => {
+        return sum + product.price * product.quantity;
+      }, 0)
+    );
   }, [state.cartItems]);
 
   // add to cart function
@@ -31,7 +42,7 @@ const CartProvider = ({ children }) => {
     removeItemFromCart(id, dispatch)
   }
   return (
-    <cartContext.Provider value={{ state, addToCart, removeFromCart }}>
+    <cartContext.Provider value={{ state, addToCart, removeFromCart , total}}>
       {children}
     </cartContext.Provider>
   );

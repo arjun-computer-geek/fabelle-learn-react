@@ -5,6 +5,7 @@ import "./cart.css";
 export const Cart = () => {
   const {
     state: { cartItems },
+    total
   } = useCart();
 
   return (
@@ -23,26 +24,19 @@ export const Cart = () => {
             {cartItems.map((item, i) => (
               <CartCard
                 key={i}
-                id={item.product}
+                id={item.id}
                 img={`http://localhost:8000/public/uploads/${item.image}`}
                 name={item.name}
                 price={item.price}
+                quantity={item.quantity}
               />
             ))}
           </table>
           <div className="total-price">
             <table>
               <tr>
-                <td>Subtotal</td>
-                <td>&#8377; 899</td>
-              </tr>
-              <tr>
-                <td>Tax</td>
-                <td>&#8377; 899</td>
-              </tr>
-              <tr>
                 <td>Total</td>
-                <td>&#8377; 899</td>
+                <td>&#8377; {total}</td>
               </tr>
             </table>
           </div>

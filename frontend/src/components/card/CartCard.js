@@ -1,8 +1,7 @@
 import { useCart } from "context/cartContex";
 import React from "react";
 
-export const CartCard = ({id, img, name, price}) => {
-  console.log(id)
+export const CartCard = ({id, img, name, price, quantity}) => {
     const {removeFromCart} = useCart()
   return (
     <tr>
@@ -18,7 +17,7 @@ export const CartCard = ({id, img, name, price}) => {
         </div>
       </td>
       <td>
-        <input type="number"  />
+        <span>{quantity}</span>
       </td>
       <td>&#8377; {price}</td>
     </tr>
