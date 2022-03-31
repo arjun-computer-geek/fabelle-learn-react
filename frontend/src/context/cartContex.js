@@ -1,4 +1,5 @@
 import { addItemToCart, removeItemFromCart } from "actions/cartActions";
+import { toast } from "react-toastify";
 import { cartReducer } from "reducers";
 
 const { createContext, useContext, useReducer, useEffect, useState } = require("react");
@@ -35,11 +36,13 @@ const CartProvider = ({ children }) => {
   // add to cart function
   const addToCart = (id) => {
     addItemToCart(id, dispatch);
+    toast.success("Item Added!")
   };
 
   // remove from cart function
   const removeFromCart =(id) => {
     removeItemFromCart(id, dispatch)
+    toast.success("Item Removed")
   }
   return (
     <cartContext.Provider value={{ state, addToCart, removeFromCart , total}}>

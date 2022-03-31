@@ -1,10 +1,11 @@
 import { Card, Sidebar } from "components";
 import { useProduct } from "context/productContext";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 import "./categories.css";
 
 export const Categories = () => {
-  const { state} = useProduct();
-  const { loading, products, error } = state;
+  const { state:{loading, products}} = useProduct();
   return (
     <>
       <main className="container">
