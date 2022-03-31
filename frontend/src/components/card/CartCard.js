@@ -7,7 +7,7 @@ export const CartCard = ({id, img, name, price, quantity}) => {
     <tr>
       <td>
         <div className="cart-info">
-          <img src={img} alt="" />
+          <img src={img} alt="product-img" />
           <div>
             <p>{name}</p>
             <small>Price : &#8377; {price} </small>
