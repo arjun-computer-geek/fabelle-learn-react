@@ -25,7 +25,7 @@ export const Cart = () => {
               <CartCard
                 key={i}
                 id={item.id}
-                img={`http://localhost:8000/public/uploads/${item.image}`}
+                img={`https://fabelle-learn-react.herokuapp.com/public/uploads/${item.image}`}
                 name={item.name}
                 price={item.price}
                 quantity={item.quantity}

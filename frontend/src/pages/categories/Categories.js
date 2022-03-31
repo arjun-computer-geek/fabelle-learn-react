@@ -15,7 +15,7 @@ export const Categories = () => {
             <Card
               key={index}
               id={product._id}
-              img={`http://localhost:8000/public/uploads/${product.image}`}
+              img={`https://fabelle-learn-react.herokuapp.com/public/uploads/${product.image}`}
               productName={product.name}
               productOwner={product.owner}
               noOfReviews={product.numOfReviews}

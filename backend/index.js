@@ -28,5 +28,5 @@ app.use('/api/',products);
 app.use('/api/',users);
 
 // listining to the server
-const port = process.env.PORT
+const port = process.env.PORT || 8000
 app.listen(port, () => console.log(`app is running on ${port} port`));
