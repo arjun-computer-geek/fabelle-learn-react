@@ -3,7 +3,7 @@ import React from "react";
 export const WishlistCard = () => {
   return (
     <div className="card card-dismiss">
-      <span className="btn-dismiss" onclick="this.parentElement.remove()">
+      <span className="btn-dismiss" >
         <i className="fa fa-times" aria-hidden="true"></i>
       </span>
       <img loading="lazy" src="./images/homepage/webdev.png" alt="product" />

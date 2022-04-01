@@ -1,13 +1,16 @@
 import { WishlistCard } from "components";
 import './wishlist.css'
 import React from "react";
+import { useWishlist } from "context/wishlistContex";
 
 export const Wishlist = () => {
+    const {state:{wishlist}} = useWishlist()
   return (
-    <main class="wishlist-page">
+    <main className="wishlist-page">
       <h2>My Wishlist</h2>
-      <div class="wishlist-container">
-        <WishlistCard />
+      <div className="wishlist-container">
+          {wishlist.map(item =><WishlistCard key={item._id}/> )}
+        
       </div>
     </main>
   );

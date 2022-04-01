@@ -1,5 +1,6 @@
 import { CartProvider } from "context/cartContex";
 import { ProductProvider } from "context/productContext";
+import { WishlistProvider } from "context/wishlistContex";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -10,7 +11,9 @@ ReactDOM.render(
   <BrowserRouter>
     <ProductProvider>
       <CartProvider>
-      <App />
+        <WishlistProvider>
+          <App />
+        </WishlistProvider>
       </CartProvider>
     </ProductProvider>
   </BrowserRouter>,
