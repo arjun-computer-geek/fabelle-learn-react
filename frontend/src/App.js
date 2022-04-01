@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Footer, Navbar } from "components";
 
 import { Route, Routes } from "react-router-dom";
-import { Categories, Home, Cart } from "pages";
+import { Categories, Home, Cart, Wishlist } from "pages";
 
 const App = () => {
   return (
@@ -25,6 +25,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </>
