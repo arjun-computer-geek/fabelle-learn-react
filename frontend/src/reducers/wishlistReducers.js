@@ -27,7 +27,7 @@ export const wishlistReducer = (state = { wishlist: [] }, action) => {
       return {
         ...state,
         wishlist: state.wishlist.filter(
-          (wishlistItem) => wishlistItem.id !== action.payload
+          (wishlistItem) => wishlistItem._id !== action.payload
         ),
       };
 
