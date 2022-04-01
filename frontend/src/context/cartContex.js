@@ -44,6 +44,7 @@ const CartProvider = ({ children }) => {
     removeItemFromCart(id, dispatch)
     toast.success("Item Removed")
   }
+
   return (
     <cartContext.Provider value={{ state, addToCart, removeFromCart , total}}>
       {children}

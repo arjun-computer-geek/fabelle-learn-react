@@ -1,6 +1,7 @@
 import { addItemToWishlist, removeItemFromWishlist } from "actions/wishlistActions";
 import { toast } from "react-toastify";
 import { wishlistReducer } from "reducers";
+import { useCart } from "./cartContex";
 
 const { createContext, useContext, useEffect, useReducer } = require("react");
 
@@ -16,6 +17,8 @@ export const WishlistProvider = ({ children }) => {
   const [state, dispatch] = useReducer(wishlistReducer, {
     wishlist: localWishlistItems,
   });
+
+  const {removeFromCart} = useCart()
 
   // setting items to the localStorage
   useEffect(() => {
@@ -35,8 +38,13 @@ const removeFromWishlist =(id) => {
     removeItemFromWishlist(id, dispatch)
     toast.success("Item Removed")
   }
+// move to wishlist function
+const moveToWishlist = (id) => {
+  addItemToWishlist(id, dispatch)
+  removeFromCart(id);
+}
   return (
-    <WishlistContext.Provider value={{state, addToWishlist, removeFromWishlist}}>
+    <WishlistContext.Provider value={{state, addToWishlist, removeFromWishlist, moveToWishlist}}>
       {children}
     </WishlistContext.Provider>
   );
