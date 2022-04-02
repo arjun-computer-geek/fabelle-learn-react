@@ -1,5 +1,4 @@
 import { login } from "actions/userActions";
-import { toast } from "react-toastify";
 import { authReducer } from "reducers/userReducers";
 
 const {
@@ -30,7 +29,6 @@ const UserProvider = ({ children }) => {
   const loginSubmitHandler = (e) => {
     e.preventDefault();
     login(email, password, dispatch)
-    toast.success("Logged In Successfully")
   }
 
   return (
