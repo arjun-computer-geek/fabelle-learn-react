@@ -1,7 +1,7 @@
 import { WishlistCard } from "components";
 import "./wishlist.css";
 import React from "react";
-import { useWishlist } from "context/wishlistContex";
+import { useWishlist } from "context/wishlistContext";
 
 export const Wishlist = () => {
   const {

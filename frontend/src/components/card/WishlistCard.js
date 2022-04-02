@@ -1,8 +1,14 @@
-import { useWishlist } from "context/wishlistContex";
+import { useCart } from "context/cartContext";
+import { useWishlist} from "context/wishlistContext";
 import React from "react";
 
 export const WishlistCard = ({id, img, name, owner, ratings, price}) => {
     const{removeFromWishlist} = useWishlist()
+    const {addToCart} = useCart()
+    const goToCart = (id) => {
+      removeFromWishlist(id)
+      addToCart(id)
+    }
   return (
     <div className="card card-dismiss">
       <span className="btn-dismiss" onClick={() => removeFromWishlist(id)}>
@@ -25,7 +31,7 @@ export const WishlistCard = ({id, img, name, owner, ratings, price}) => {
         <div className="product-price">
           &#8377;<span>{price}</span>
         </div>
-        <button className="btn product-add-to-cart-btn">Add to cart</button>
+        <button className="btn product-add-to-cart-btn" onClick={() => goToCart(id)}>Move to cart</button>
       </div>
     </div>
   );

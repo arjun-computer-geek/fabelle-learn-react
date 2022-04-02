@@ -1,5 +1,5 @@
-import { useCart } from "context/cartContex";
-import { useWishlist } from "context/wishlistContex";
+import { useCart } from "context/cartContext";
+import { useWishlist } from "context/wishlistContext";
 import React from "react";
 
 export const CartCard = ({id, img, name, price, quantity}) => {
@@ -15,7 +15,7 @@ export const CartCard = ({id, img, name, price, quantity}) => {
             <small>Price : &#8377; {price} </small>
             <br/>
             <button className="cartBtn" onClick={() => removeFromCart(id)}>Remove</button>
-            <button className="cartBtn" onClick={() => moveToWishlist(id)}>Move To Wishlist</button>
+            <button className="cartBtn" onClick={() => moveToWishlist(id)}>Move to wishlist</button>
           </div>
         </div>
       </td>

@@ -1,5 +1,5 @@
-import { useCart } from 'context/cartContex'
-import { useWishlist } from 'context/wishlistContex'
+import { useCart } from 'context/cartContext'
+import { useWishlist } from 'context/wishlistContext'
 import React from 'react'
 
 export const Card = ({id, img,productName, productOwner, noOfReviews, price}) => {

@@ -1,6 +1,6 @@
-import { CartProvider } from "context/cartContex";
+import { CartProvider } from "context/cartContext";
 import { ProductProvider } from "context/productContext";
-import { WishlistProvider } from "context/wishlistContex";
+import { WishlistProvider } from "context/wishlistContext";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";

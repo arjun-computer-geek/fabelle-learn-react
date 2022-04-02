@@ -1,6 +1,6 @@
 import { Badge } from "@mui/material";
-import { useCart } from "context/cartContex";
-import { useWishlist } from "context/wishlistContex";
+import { useCart } from "context/cartContext";
+import { useWishlist } from "context/wishlistContext";
 import React from "react";
 import { Link } from "react-router-dom";
 

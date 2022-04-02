@@ -1,7 +1,7 @@
 import { addItemToWishlist, removeItemFromWishlist } from "actions/wishlistActions";
 import { toast } from "react-toastify";
 import { wishlistReducer } from "reducers";
-import { useCart } from "./cartContex";
+import { useCart } from "./cartContext";
 
 const { createContext, useContext, useEffect, useReducer } = require("react");
 
@@ -43,6 +43,7 @@ const moveToWishlist = (id) => {
   addItemToWishlist(id, dispatch)
   removeFromCart(id);
 }
+
   return (
     <WishlistContext.Provider value={{state, addToWishlist, removeFromWishlist, moveToWishlist}}>
       {children}
