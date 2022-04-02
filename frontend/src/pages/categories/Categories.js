@@ -6,12 +6,12 @@ import "./categories.css";
 
 export const Categories = () => {
   const { state:{loading, products, error}} = useProduct();
-  console.log(error)
-  // useEffect(()=> {
-  //   if(error){
-  //     toast.error(error)
-  //   }
-  // },[error])
+  useEffect(()=> {
+    if(error){
+      toast.error(error)
+    }
+  },[error])
+  
   return (
     <>
       <main className="container">
