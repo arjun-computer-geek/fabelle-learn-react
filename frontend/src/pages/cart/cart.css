@@ -1,3 +1,17 @@
+.cartBtn{
+    background-color: transparent;
+    border: none;
+    color: var(--love-dark);
+    padding: 5px;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    transition: transform .2s
+}
+.cartBtn:hover{
+    color: var(--love-light);
+    transform: scale(1.1)
+}
+
 .cart-page {
     display: flex;
     flex-direction: column;

@@ -1,10 +1,16 @@
 import { Badge } from "@mui/material";
-import { useCart } from "context/cartContex";
+import { useCart } from "context/cartContext";
+import { useWishlist } from "context/wishlistContext";
 import React from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-    const {state:{cartItems}} = useCart()
+  const {
+    state: { cartItems },
+  } = useCart();
+  const {
+    state: { wishlist },
+  } = useWishlist();
   return (
     <nav className="nav nav-boxshadow">
       <Link to="/" className="brand my-brand">
@@ -27,11 +33,13 @@ export const Navbar = () => {
           <i className="fa fa-user"></i>
           <span className="nav-icon-text">Login</span>
         </Link>
-        <Link to="./wishlist">
-          <i className="fa fa-heart" aria-hidden="true"></i>
-          <span className="nav-icon-text">Wishlist</span>
-        </Link>
-        <Badge badgeContent={cartItems.length } color="secondary">
+        <Badge badgeContent={wishlist.length} color="secondary">
+          <Link to="/wishlist">
+            <i className="fa fa-heart" aria-hidden="true"></i>
+            <span className="nav-icon-text">Wishlist</span>
+          </Link>
+        </Badge>
+        <Badge badgeContent={cartItems.length} color="secondary">
           <Link to="/cart">
             <i className="fa fa-shopping-cart"></i>
             <span className="nav-icon-text">cart</span>

@@ -1,11 +1,11 @@
 import { CartCard } from "components";
-import { useCart } from "context/cartContex";
+import { useCart } from "context/cartContext";
 import React from "react";
 import "./cart.css";
 export const Cart = () => {
   const {
     state: { cartItems },
-    total
+    total,
   } = useCart();
 
   return (
@@ -16,28 +16,34 @@ export const Cart = () => {
         <>
           <h2>My Cart</h2>
           <table>
-            <tr>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>SubTotal</th>
-            </tr>
-            {cartItems.map((item, i) => (
-              <CartCard
-                key={i}
-                id={item.id}
-                img={`https://fabelle-learn-react.herokuapp.com/public/uploads/${item.image}`}
-                name={item.name}
-                price={item.price}
-                quantity={item.quantity}
-              />
-            ))}
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>SubTotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartItems.map((item, i) => (
+                <CartCard
+                  key={i}
+                  id={item.id}
+                  img={`https://fabelle-learn-react.herokuapp.com/public/uploads/${item.image}`}
+                  name={item.name}
+                  price={item.price}
+                  quantity={item.quantity}
+                />
+              ))}
+            </tbody>
           </table>
           <div className="total-price">
             <table>
-              <tr>
-                <td>Total</td>
-                <td>&#8377; {total}</td>
-              </tr>
+              <tfoot>
+                <tr>
+                  <td>Total</td>
+                  <td>&#8377; {total}</td>
+                </tr>
+              </tfoot>
             </table>
           </div>
           <button className="btn btn-pace-order">Place Order</button>

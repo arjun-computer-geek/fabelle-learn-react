@@ -1,0 +1,19 @@
+.wishlist-page{
+    padding:3em 2em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.wishlist-page h2{
+    border-bottom: 2px solid var(--gray-90);
+}
+.wishlist-container{
+    padding: 2em 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
