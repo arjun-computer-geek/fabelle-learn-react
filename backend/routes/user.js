@@ -8,7 +8,8 @@ const {
     getUserDetails, 
     updateUser, 
     deleteUser,
-    logout
+    logout,
+    getUserProfile
 } = require("../controllers/userController");
 const {isAuthenticatedUser, authorizeRoles} = require('../middlewares/userAuth')
 
@@ -20,6 +21,10 @@ router
 router
     .route('/login')
     .post(loginUser);
+    
+router
+    .route('/me')
+    .get(isAuthenticatedUser, getUserProfile)
 
 router
     .route('/logout')
