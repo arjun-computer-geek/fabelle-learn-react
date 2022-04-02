@@ -20,6 +20,7 @@ export const productReducer = (state = { products: [] }, action) => {
       return {
         loading: true,
         error: action.payload,
+        products: []
       };
     default:
       return state;

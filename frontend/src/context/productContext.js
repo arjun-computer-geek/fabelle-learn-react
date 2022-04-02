@@ -8,13 +8,13 @@ const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, {
     loading: false,
     products: [],
+    error: ""
   });
 
   // fetching data
   useEffect(() => {
     getProducts(dispatch);
   }, []);
-
   return (
     <productContext.Provider value={{ state }}>
       {children}

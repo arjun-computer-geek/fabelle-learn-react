@@ -1,5 +1,6 @@
 import { useUser } from "context/userContext";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import "./login.css";
 
 export const Login = () => {
@@ -22,7 +23,7 @@ export const Login = () => {
     setIndicatorTransform("translateX(0px)");
   };
   const {
-    state: { isAuthenticated },
+    state: { isAuthenticated, error},
     loginSubmitHandler,
     email,
     name,
@@ -36,7 +37,10 @@ export const Login = () => {
     if (isAuthenticated) {
       console.log("done");
     }
-  }, [isAuthenticated]);
+    if(error){
+      toast.error(error)
+    }
+  }, [isAuthenticated, error]);
 
   return (
     <main className="login-main">
