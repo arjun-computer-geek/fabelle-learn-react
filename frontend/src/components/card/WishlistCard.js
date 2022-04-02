@@ -5,7 +5,7 @@ import React from "react";
 export const WishlistCard = ({id, img, name, owner, ratings, price}) => {
     const{removeFromWishlist} = useWishlist()
     const {addToCart} = useCart()
-    const goToCart = (id) => {
+    const moveToCart = (id) => {
       removeFromWishlist(id)
       addToCart(id)
     }
@@ -31,7 +31,7 @@ export const WishlistCard = ({id, img, name, owner, ratings, price}) => {
         <div className="product-price">
           &#8377;<span>{price}</span>
         </div>
-        <button className="btn product-add-to-cart-btn" onClick={() => goToCart(id)}>Move to cart</button>
+        <button className="btn product-add-to-cart-btn" onClick={() => moveToCart(id)}>Move to cart</button>
       </div>
     </div>
   );
