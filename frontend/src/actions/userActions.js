@@ -29,7 +29,7 @@ export const login = async (email, password, dispatch) => {
       { email, password },
       config
     );
-
+      console.log(data)
     dispatch({
       type: LOGIN_SUCCESS,
       payload: data.user,
@@ -88,7 +88,7 @@ export const loadUser = async (dispatch) => {
   } catch (error) {
     dispatch({
       type: LOAD_USER_FAIL,
-      payload: error.response,
+      payload: error.response.data.message,
     });
   }
 };

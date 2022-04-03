@@ -1,5 +1,6 @@
 import { useUser } from "context/userContext";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./login.css";
 
@@ -32,10 +33,12 @@ export const Login = () => {
     setPassword,
     setName,
   } = useUser();
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (isAuthenticated) {
-      console.log("done");
+      toast.success("Login Successful ")
+      navigate('/')
     }
     if(error){
       toast.error(error)
@@ -72,7 +75,7 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="btn btn-outline">Login for Testing</button>
+          <button className="btn btn-outline" onClick={() => {setEmail("admin@gmail.com"); setPassword("password")}}>Login for Testing</button>
           <button type="submit" className="btn">
             Login
           </button>
