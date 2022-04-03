@@ -1,7 +1,7 @@
-import { login } from "actions/userActions";
+import { loadUser, login } from "actions/userActions";
 import { authReducer } from "reducers/userReducers";
 
-const { createContext, useContext, useReducer, useState } = require("react");
+const { createContext, useContext, useReducer, useState, useEffect } = require("react");
 
 const userContext = createContext();
 
@@ -23,6 +23,9 @@ const UserProvider = ({ children }) => {
     login(email, password, dispatch);
   };
 
+  useEffect(() => {
+    localStorage.setItem('isAuthenticated', JSON.stringify(state.isAuthenticated))
+  },[state.isAuthenticated])
 
   return (
     <userContext.Provider

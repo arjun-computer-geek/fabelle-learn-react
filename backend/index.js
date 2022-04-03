@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const connectDatabase = require("./config/databaseConnection");
+const errorMiddleware = require('./middlewares/error');
 const app = express();
 
 
@@ -20,12 +21,17 @@ app.use(cookieParser())
 app.use(cors())
 app.use('/public', express.static('public'))
 
+
+
 // imporing routes
 const products = require('./routes/product')
 const users = require('./routes/user')
 //Mounting the routes.
 app.use('/api/',products);
 app.use('/api/',users);
+
+//Middleware to handle error
+app.use(errorMiddleware);
 
 // listining to the server
 const port = process.env.PORT || 8000

@@ -28,7 +28,7 @@ exports.loginUser = catchAsync( async (req, res, next) => {
     }
 
     //Finding user in database
-    const user = await User.findOne({ email }).select('password')
+    const user = await User.findOne({ email }).select('+password')
 
     if(!user) {
         return next( new ErrorHandler('Invalid Email or Password', 400));
@@ -43,7 +43,15 @@ exports.loginUser = catchAsync( async (req, res, next) => {
 
     sendToken(user, 200, res);
 })
+//Get currently logged in user details => /api/me
+exports.getUserProfile = catchAsync(async(req, res, next) => {
+    const user = await User.findById(req.user.id);
 
+    res.status(200).json({
+        sucess: true,
+        user
+    })
+})
 //Logout user => /api/logout
 exports.logout = catchAsync(async(req, res, next) => {
     res.cookie('token', null, {

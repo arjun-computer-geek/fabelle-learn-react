@@ -29,7 +29,6 @@ export const login = async (email, password, dispatch) => {
       { email, password },
       config
     );
-      console.log(data)
     dispatch({
       type: LOGIN_SUCCESS,
       payload: data.user,

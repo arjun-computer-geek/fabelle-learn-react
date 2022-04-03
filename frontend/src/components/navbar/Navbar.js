@@ -15,7 +15,6 @@ export const Navbar = () => {
   const {
     state: { user },
   } = useUser();
-  console.log(user)
   return (
     <nav className="nav nav-boxshadow">
       <Link to="/" className="brand my-brand">
@@ -34,10 +33,11 @@ export const Navbar = () => {
         <input type="text" placeholder="Type to search" />
       </div>
       <div className="nav-icons">
-        {user ? <p>user hai</p> : <p>User nhi hai</p>}
+        
         <Link to="/login">
           <i className="fa fa-user"></i>
-          <span className="nav-icon-text">Login</span>
+          {user ? <span className="nav-icon-text">{user.name}</span> : <span className="nav-icon-text">Login</span>}
+          
         </Link>
         <Badge badgeContent={wishlist.length} color="secondary">
           <Link to="/wishlist">
