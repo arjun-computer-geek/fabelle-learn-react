@@ -51,11 +51,12 @@ aside {
 }
 
 .aside-header .filter-btn i {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .aside-header .filter-btn span {
-  font-size: 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .aside-header .sort-btn {

@@ -6,7 +6,7 @@ export const Sidebar = () => {
         <div className="aside-container aside-header">
           <div className="filter-btn">
             <i className="fa fa-filter"></i>
-            <span>Filter</span>
+            <span> Clear</span> <span>Filters</span>
           </div>
           <div className="sort-btn">
             <span>Sort by</span>
