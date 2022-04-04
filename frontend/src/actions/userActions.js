@@ -24,14 +24,14 @@ export const login = async (email, password, dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
+    const { data:{user} } = await axios.post(
       "https://fabelle-learn-react.herokuapp.com/api/login",
       { email, password },
       config
     );
     dispatch({
       type: LOGIN_SUCCESS,
-      payload: {_id: data.user._id,name: data.user.name},
+      payload: {_id:user._id,name:user.name, email:user.email},
     });
   } catch (error) {
     dispatch({

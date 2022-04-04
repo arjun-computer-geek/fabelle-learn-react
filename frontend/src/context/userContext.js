@@ -1,7 +1,13 @@
-import { login } from "actions/userActions";
+import { loadUser, login, logout } from "actions/userActions";
 import { authReducer } from "reducers/userReducers";
 
-const { createContext, useContext, useReducer, useState, useEffect } = require("react");
+const {
+  createContext,
+  useContext,
+  useReducer,
+  useState,
+  useEffect,
+} = require("react");
 
 const userContext = createContext();
 
@@ -10,11 +16,11 @@ const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     loading: false,
     isAuthenticated: localStorage.getItem("isAuthenticated")
-    ? JSON.parse(localStorage.getItem("isAuthenticated"))
-    : false,
+      ? JSON.parse(localStorage.getItem("isAuthenticated"))
+      : false,
     user: localStorage.getItem("user")
-    ? JSON.parse(localStorage.getItem("user"))
-    : null
+      ? JSON.parse(localStorage.getItem("user"))
+      : null,
   });
 
   // states
@@ -22,16 +28,26 @@ const UserProvider = ({ children }) => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
+  useEffect(() => {
+    localStorage.setItem(
+      "isAuthenticated",
+      JSON.stringify(state.isAuthenticated)
+    );
+    localStorage.setItem(
+      "user",
+      JSON.stringify(state.user ? state.user : null)
+    );
+  }, [state.isAuthenticated, state.user]);
+
   // functions
   const loginSubmitHandler = (e) => {
     e.preventDefault();
     login(email, password, dispatch);
   };
 
-  useEffect(() => {
-    localStorage.setItem('isAuthenticated', JSON.stringify(state.isAuthenticated))
-    localStorage.setItem("user", JSON.stringify(state.user?state.user:null));
-  },[state.isAuthenticated, state.user])
+  const logOut = () => {
+    logout(dispatch);
+  };
   return (
     <userContext.Provider
       value={{
@@ -40,6 +56,7 @@ const UserProvider = ({ children }) => {
         password,
         name,
         loginSubmitHandler,
+        logOut,
         setEmail,
         setPassword,
         setName,
