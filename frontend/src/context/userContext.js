@@ -1,4 +1,6 @@
-import { loadUser, login, logout } from "actions/userActions";
+import { login, logout, register } from "actions/userActions";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { authReducer } from "reducers/userReducers";
 
 const {
@@ -28,7 +30,16 @@ const UserProvider = ({ children }) => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
+  //using navigate hook
+  const navigate = useNavigate();
+
   useEffect(() => {
+    if (state.isAuthenticated) {
+      toast.success("Welcome to World of Learning");
+      navigate("/");
+    }
+    if (state.error) toast.error(state.error);
+    // setting local storage data
     localStorage.setItem(
       "isAuthenticated",
       JSON.stringify(state.isAuthenticated)
@@ -37,7 +48,7 @@ const UserProvider = ({ children }) => {
       "user",
       JSON.stringify(state.user ? state.user : null)
     );
-  }, [state.isAuthenticated, state.user]);
+  }, [state.isAuthenticated, state.user, state.error]);
 
   // functions
   const loginSubmitHandler = (e) => {
@@ -48,6 +59,10 @@ const UserProvider = ({ children }) => {
   const logOut = () => {
     logout(dispatch);
   };
+  const registerHandler = (e, email, password, name) => {
+    e.preventDefault();
+    register({ name, email, password }, dispatch);
+  };
   return (
     <userContext.Provider
       value={{
@@ -56,6 +71,7 @@ const UserProvider = ({ children }) => {
         password,
         name,
         loginSubmitHandler,
+        registerHandler,
         logOut,
         setEmail,
         setPassword,

@@ -1,7 +1,5 @@
 import { useUser } from "context/userContext";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import React, { useState } from "react";
 import "./login.css";
 
 export const Login = () => {
@@ -24,8 +22,8 @@ export const Login = () => {
     setIndicatorTransform("translateX(0px)");
   };
   const {
-    state: { isAuthenticated, error},
     loginSubmitHandler,
+    registerHandler,
     email,
     name,
     password,
@@ -33,18 +31,11 @@ export const Login = () => {
     setPassword,
     setName,
   } = useUser();
-  const navigate = useNavigate()
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      toast.success("Login Successful ")
-      navigate('/')
-    }
-    if(error){
-      toast.error(error)
-    }
-  }, [isAuthenticated, error]);
-
+  // RegisForm submit Handler function
+  const registerSubmitHandler = (e) => {
+    registerHandler(e, email, password, name);
+  };
   return (
     <main className="login-main">
       <div className="form-container">
@@ -75,7 +66,15 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="btn btn-outline" onClick={() => {setEmail("admin@gmail.com"); setPassword("password")}}>Login for Testing</button>
+          <button
+            className="btn btn-outline"
+            onClick={() => {
+              setEmail("admin@gmail.com");
+              setPassword("password");
+            }}
+          >
+            Login for Testing
+          </button>
           <button type="submit" className="btn">
             Login
           </button>
@@ -84,7 +83,11 @@ export const Login = () => {
           </a>
         </form>
 
-        <form action="" id="regForm" style={{ transform: regTransform }}>
+        <form
+          onSubmit={registerSubmitHandler}
+          id="regForm"
+          style={{ transform: regTransform }}
+        >
           <input
             type="text"
             placeholder="Name"

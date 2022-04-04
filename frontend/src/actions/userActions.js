@@ -53,7 +53,7 @@ export const register = async (userData, dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
+    const { data:{user} } = await axios.post(
       "https://fabelle-learn-react.herokuapp.com/api/register",
       userData,
       config
@@ -61,7 +61,7 @@ export const register = async (userData, dispatch) => {
 
     dispatch({
       type: REGISTER_USER_SUCCESS,
-      payload: data.user,
+      payload: {_id:user._id,name:user.name, email:user.email},
     });
   } catch (error) {
     dispatch({
