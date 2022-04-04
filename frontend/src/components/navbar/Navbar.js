@@ -33,12 +33,18 @@ export const Navbar = () => {
         <input type="text" placeholder="Type to search" />
       </div>
       <div className="nav-icons">
-        
-        <Link to="/login">
-          <i className="fa fa-user"></i>
-          {user ? <span className="nav-icon-text">{user.name}</span> : <span className="nav-icon-text">Login</span>}
-          
-        </Link>
+        {user ? (
+          <Link to="/profile">
+            <i className="fa fa-user"></i>
+            <span className="nav-icon-text">{user.name}</span>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <i className="fa fa-user"></i>
+            <span className="nav-icon-text">Login</span>
+          </Link>
+        )}
+
         <Badge badgeContent={wishlist.length} color="secondary">
           <Link to="/wishlist">
             <i className="fa fa-heart" aria-hidden="true"></i>

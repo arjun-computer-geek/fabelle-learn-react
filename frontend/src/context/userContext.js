@@ -1,4 +1,4 @@
-import { loadUser, login } from "actions/userActions";
+import { login } from "actions/userActions";
 import { authReducer } from "reducers/userReducers";
 
 const { createContext, useContext, useReducer, useState, useEffect } = require("react");
@@ -10,6 +10,9 @@ const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     loading: false,
     isAuthenticated: false,
+    user: localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : null
   });
 
   // states
@@ -25,8 +28,9 @@ const UserProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('isAuthenticated', JSON.stringify(state.isAuthenticated))
-  },[state.isAuthenticated])
-
+    localStorage.setItem("user", JSON.stringify(state.user?state.user:null));
+  },[state.isAuthenticated, state.user])
+console.log(state.user?state.user:"this is ")
   return (
     <userContext.Provider
       value={{
