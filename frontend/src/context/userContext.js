@@ -9,7 +9,9 @@ const UserProvider = ({ children }) => {
   // use reducer hooks
   const [state, dispatch] = useReducer(authReducer, {
     loading: false,
-    isAuthenticated: false,
+    isAuthenticated: localStorage.getItem("isAuthenticated")
+    ? JSON.parse(localStorage.getItem("isAuthenticated"))
+    : false,
     user: localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))
     : null
@@ -30,7 +32,6 @@ const UserProvider = ({ children }) => {
     localStorage.setItem('isAuthenticated', JSON.stringify(state.isAuthenticated))
     localStorage.setItem("user", JSON.stringify(state.user?state.user:null));
   },[state.isAuthenticated, state.user])
-console.log(state.user?state.user:"this is ")
   return (
     <userContext.Provider
       value={{

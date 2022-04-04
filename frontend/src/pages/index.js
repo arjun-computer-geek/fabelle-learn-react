@@ -1,3 +1,4 @@
+export { Profile } from "./profile/Profile";
 export { Login } from "./login/Login";
 export { Wishlist } from "./wishlist/Wishlist";
 export {Cart} from "./cart/Cart";

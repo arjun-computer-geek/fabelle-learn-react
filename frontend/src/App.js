@@ -1,10 +1,10 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Footer, Navbar } from "components";
+import { Footer, Navbar, ProtectedRoute } from "components";
 
 import { Route, Routes } from "react-router-dom";
-import { Categories, Home, Cart, Wishlist, Login } from "pages";
+import { Categories, Home, Cart, Wishlist, Login, Profile } from "pages";
 
 const App = () => {
   return (
@@ -24,8 +24,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/login" element={<Login />}/>
+        
+        {/* protectd Routes */}
+        <Route element={<ProtectedRoute />} >
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        </Route>
       </Routes>
       <Footer />
     </>
