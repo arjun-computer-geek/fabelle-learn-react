@@ -1,5 +1,11 @@
-import './sidebar.css'
+import { Slider } from "@mui/material";
+import { useProduct } from "context/productContext";
+import "./sidebar.css";
 export const Sidebar = () => {
+  const {
+    filterByRatings,
+    sortByCategory,
+  } = useProduct();
   return (
     <>
       <aside>
@@ -11,66 +17,40 @@ export const Sidebar = () => {
           <div className="sort-btn">
             <span>Sort by</span>
             <select name="" id="">
-              <option value="most-popular">Most Popular</option>
-              <option value="high-rated">High Rated</option>
-              <option value="newest">Newest</option>
+              <option
+                value="most-popular"
+                onClick={(e) => sortByCategory(e.target.value)}
+              >
+                Most Popular
+              </option>
+              <option
+                value="high-rated"
+                onClick={(e) => sortByCategory(e.target.value)}
+              >
+                High Rated
+              </option>
+              <option
+                value="newest"
+                onClick={(e) => sortByCategory(e.target.value)}
+              >
+                Newest
+              </option>
             </select>
           </div>
         </div>
 
         <div className="aside-container">
           <h3>Ratings</h3>
-          <div className="aside-content">
-            <div className="aside-row">
-              <input type="radio" name="" id="" />
-              <label>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-half-o"></i>
-                <i className="fa fa-star-o"></i>
-                <span className="row-data">4.5 &amp; up </span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-
-            <div className="aside-row">
-              <input type="radio" name="" id="" />
-              <label>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-half-o"></i>
-                <i className="fa fa-star-o"></i>
-                <span className="row-data">4.5 &amp; up </span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-            <div className="aside-row">
-              <input type="radio" name="" id="" />
-              <label>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-half-o"></i>
-                <i className="fa fa-star-o"></i>
-                <span className="row-data">4.5 &amp; up </span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-            <div className="aside-row">
-              <input type="radio" name="" id="" />
-              <label>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star-half-o"></i>
-                <i className="fa fa-star-o"></i>
-                <span className="row-data">4.5 &amp; up </span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-          </div>
+          <Slider
+            aria-label="ratings"
+            defaultValue={3}
+            valueLabelDisplay="auto"
+            marks
+            min={1}
+            step={1}
+            max={5}
+            onChange={(e) => filterByRatings(e.target.value)}
+          />
         </div>
 
         <div className="aside-container">

@@ -1,10 +1,12 @@
+import { Rating } from '@mui/material'
 import { useCart } from 'context/cartContext'
 import { useWishlist } from 'context/wishlistContext'
 import React from 'react'
 
-export const Card = ({id, img,productName, productOwner, noOfReviews, price}) => {
+export const Card = ({id, img,productName, productOwner, noOfReviews, price, ratings}) => {
     const {addToCart} = useCart()
     const {addToWishlist} = useWishlist()
+    
     return (
         <div className="card">
             <img loading="lazy" src={img} alt="product" />
@@ -12,11 +14,7 @@ export const Card = ({id, img,productName, productOwner, noOfReviews, price}) =>
                 <h4 className="product-name">{productName}</h4>
                 <h3 className="product-owner">{productOwner}</h3>
                 <div className="product-ratings">
-                    <i className="fa fa-star"></i>
-                    <i className="fa fa-star"></i>
-                    <i className="fa fa-star"></i>
-                    <i className="fa fa-star-half-empty"></i>
-                    <i className="fa fa-star-o"></i>
+                    <Rating name="half-rating-read" defaultValue={0} value={ratings} precision={0.5} readOnly />
                     <span>({noOfReviews})</span>
                 </div>
                 <div className="product-price">&#8377;<span>{price}</span></div>

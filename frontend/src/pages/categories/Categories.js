@@ -7,7 +7,14 @@ import "./categories.css";
 export const Categories = () => {
   const {
     state: { loading, products, error },
+    filterState:{byRatings}
   } = useProduct();
+
+  const transformProducts = () => {
+    let sortedProducts = products;
+    if(byRatings) return sortedProducts = sortedProducts.filter(product => product.ratings >= byRatings)
+    return sortedProducts;
+  }
   useEffect(() => {
     if (error) {
       toast.error(error);
@@ -22,7 +29,7 @@ export const Categories = () => {
         <main className="container">
           <Sidebar />
           <div className="main-content">
-            {products.map((product, index) => (
+            {transformProducts().map((product, index) => (
               <Card
                 key={index}
                 id={product._id}
@@ -30,6 +37,7 @@ export const Categories = () => {
                 productName={product.name}
                 productOwner={product.owner}
                 noOfReviews={product.numOfReviews}
+                ratings={product.ratings}
                 price={product.price}
               />
             ))}
