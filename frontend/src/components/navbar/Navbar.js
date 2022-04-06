@@ -1,5 +1,6 @@
 import { Badge } from "@mui/material";
 import { useCart } from "context/cartContext";
+import { useUser } from "context/userContext";
 import { useWishlist } from "context/wishlistContext";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -11,6 +12,9 @@ export const Navbar = () => {
   const {
     state: { wishlist },
   } = useWishlist();
+  const {
+    state: { user },
+  } = useUser();
   return (
     <nav className="nav nav-boxshadow">
       <Link to="/" className="brand my-brand">
@@ -29,10 +33,18 @@ export const Navbar = () => {
         <input type="text" placeholder="Type to search" />
       </div>
       <div className="nav-icons">
-        <Link to="/login">
-          <i className="fa fa-user"></i>
-          <span className="nav-icon-text">Login</span>
-        </Link>
+        {user ? (
+          <Link to="/profile">
+            <i className="fa fa-user"></i>
+            <span className="nav-icon-text">{user.name}</span>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <i className="fa fa-user"></i>
+            <span className="nav-icon-text">Login</span>
+          </Link>
+        )}
+
         <Badge badgeContent={wishlist.length} color="secondary">
           <Link to="/wishlist">
             <i className="fa fa-heart" aria-hidden="true"></i>

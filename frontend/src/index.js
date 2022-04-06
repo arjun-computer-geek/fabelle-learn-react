@@ -1,5 +1,6 @@
 import { CartProvider } from "context/cartContext";
 import { ProductProvider } from "context/productContext";
+import { UserProvider } from "context/userContext";
 import { WishlistProvider } from "context/wishlistContext";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -8,15 +9,18 @@ import App from "./App";
 import "./index.css";
 
 ReactDOM.render(
+  <React.StrictMode>
   <BrowserRouter>
     <ProductProvider>
       <CartProvider>
         <WishlistProvider>
-          <App />
+          <UserProvider>
+            <App />
+          </UserProvider>
         </WishlistProvider>
       </CartProvider>
     </ProductProvider>
-  </BrowserRouter>,
-
+  </BrowserRouter>
+</React.StrictMode>,
   document.getElementById("root")
 );
