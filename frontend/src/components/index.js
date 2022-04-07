@@ -1,3 +1,4 @@
+export { Loader } from './loader/Loader'
 export { ProtectedRoute } from './route/ProtectedRoute'
 export { WishlistCard } from './card/WishlistCard'
 export { CartCard } from './card/CartCard'

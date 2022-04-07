@@ -1,5 +1,6 @@
 import { Badge } from "@mui/material";
 import { useCart } from "context/cartContext";
+import { useProduct } from "context/productContext";
 import { useUser } from "context/userContext";
 import { useWishlist } from "context/wishlistContext";
 import React from "react";
@@ -15,6 +16,7 @@ export const Navbar = () => {
   const {
     state: { user },
   } = useUser();
+  const {searchProduct} = useProduct();
   return (
     <nav className="nav nav-boxshadow">
       <Link to="/" className="brand my-brand">
@@ -30,7 +32,7 @@ export const Navbar = () => {
       </div>
       <div className="nav-search">
         <i className="fa fa-search"></i>
-        <input type="text" placeholder="Type to search" />
+        <input onChange={(e) => searchProduct(e.target.value)} type="text" placeholder="Type to search" />
       </div>
       <div className="nav-icons">
         {user ? (

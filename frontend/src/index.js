@@ -9,7 +9,7 @@ import App from "./App";
 import "./index.css";
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
   <BrowserRouter>
     <ProductProvider>
       <CartProvider>
@@ -20,7 +20,7 @@ ReactDOM.render(
         </WishlistProvider>
       </CartProvider>
     </ProductProvider>
-  </BrowserRouter>
-</React.StrictMode>,
+  </BrowserRouter>,
+// </React.StrictMode>,
   document.getElementById("root")
 );
