@@ -7,14 +7,31 @@ import "./categories.css";
 export const Categories = () => {
   const {
     state: { loading, products, error },
-    filterState:{byRatings}
+    filterState: { byRatings, sort },
   } = useProduct();
 
   const transformProducts = () => {
     let sortedProducts = products;
-    if(byRatings) return sortedProducts = sortedProducts.filter(product => product.ratings >= byRatings)
+
+    if (byRatings) {
+      sortedProducts = sortedProducts.filter(
+        (product) => product.ratings >= byRatings
+      );
+    }
+    if (sort === "high-rated") {
+      sortedProducts = sortedProducts.sort((a, b) => b.ratings - a.ratings);
+    }
+
+    if (sort === "most-popular") {
+      sortedProducts = sortedProducts.sort(
+        (a, b) => b.numOfReviews - a.numOfReviews
+      );
+    }
+    if(sort === "newest"){
+      sortedProducts = sortedProducts.sort((a, b) =>a.createdAt > b.createdAt ? 1: -1)
+    }
     return sortedProducts;
-  }
+  };
   useEffect(() => {
     if (error) {
       toast.error(error);

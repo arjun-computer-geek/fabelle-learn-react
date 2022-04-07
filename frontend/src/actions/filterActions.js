@@ -6,7 +6,7 @@ export const getRatings = async (rating, dispatch) => {
         payload: rating
     })
 }
-export const sort = async (category, dispatch) => {
+export const sortProduct = async (category, dispatch) => {
     dispatch({
         type: SORT_BY_CATEGORY,
         payload: category
