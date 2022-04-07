@@ -2,11 +2,8 @@ import { Slider } from "@mui/material";
 import { useProduct } from "context/productContext";
 import "./sidebar.css";
 export const Sidebar = () => {
-  const {
-    filterByRatings,
-    sortByCategory,
-    clearFilter
-  } = useProduct();
+  const {filterState: {  sortPrice }, filterByRatings, sortByCategory, clearFilter, sortByPrice } =
+    useProduct();
   return (
     <>
       <aside>
@@ -53,49 +50,26 @@ export const Sidebar = () => {
             onChange={(e) => filterByRatings(e.target.value)}
           />
         </div>
-
         <div className="aside-container">
-          <h3>Video Duration</h3>
+          <h3>Price</h3>
           <div className="aside-content">
             <div className="aside-row">
-              <input type="checkbox" name="" id="" />
-              <label>
-                <span className="row-data">0-1 Hours</span>
+              <label onClick={() => sortByPrice("free")} >
+                <input type="checkbox" checked={sortPrice === 'free' ? true: false}/>
+                <span className="row-data">Free</span>
                 <span className="row-data-num">( 4,252 )</span>
               </label>
             </div>
 
             <div className="aside-row">
-              <input type="checkbox" name="" id="" />
-              <label>
-                <span className="row-data">1-3 Hours</span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-            <div className="aside-row">
-              <input type="checkbox" name="" id="" />
-              <label>
-                <span className="row-data">3-6 Hours</span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-            <div className="aside-row">
-              <input type="checkbox" name="" id="" />
-              <label>
-                <span className="row-data">9-17 Hours</span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-            <div className="aside-row">
-              <input type="checkbox" name="" id="" />
-              <label>
-                <span className="row-data">17+ Hours</span>
+              <label onClick={() => sortByPrice("paid")}>
+                <input type="checkbox" checked={sortPrice === 'paid' ? true: false}/>
+                <span className="row-data">Paid</span>
                 <span className="row-data-num">( 4,252 )</span>
               </label>
             </div>
           </div>
         </div>
-
         <div className="aside-container">
           <h3>Topic</h3>
           <div className="aside-content">
@@ -160,6 +134,48 @@ export const Sidebar = () => {
         </div>
 
         <div className="aside-container">
+          <h3>Video Duration</h3>
+          <div className="aside-content">
+            <div className="aside-row">
+              <input type="checkbox" name="" id="" />
+              <label>
+                <span className="row-data">0-1 Hours</span>
+                <span className="row-data-num">( 4,252 )</span>
+              </label>
+            </div>
+
+            <div className="aside-row">
+              <input type="checkbox" name="" id="" />
+              <label>
+                <span className="row-data">1-3 Hours</span>
+                <span className="row-data-num">( 4,252 )</span>
+              </label>
+            </div>
+            <div className="aside-row">
+              <input type="checkbox" name="" id="" />
+              <label>
+                <span className="row-data">3-6 Hours</span>
+                <span className="row-data-num">( 4,252 )</span>
+              </label>
+            </div>
+            <div className="aside-row">
+              <input type="checkbox" name="" id="" />
+              <label>
+                <span className="row-data">9-17 Hours</span>
+                <span className="row-data-num">( 4,252 )</span>
+              </label>
+            </div>
+            <div className="aside-row">
+              <input type="checkbox" name="" id="" />
+              <label>
+                <span className="row-data">17+ Hours</span>
+                <span className="row-data-num">( 4,252 )</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div className="aside-container">
           <h3>Level</h3>
           <div className="aside-content">
             <div className="aside-row">
@@ -188,27 +204,6 @@ export const Sidebar = () => {
               <input type="checkbox" name="" id="" />
               <label>
                 <span className="row-data">Expert</span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div className="aside-container">
-          <h3>Price</h3>
-          <div className="aside-content">
-            <div className="aside-row">
-              <input type="checkbox" name="" id="" />
-              <label>
-                <span className="row-data">Free</span>
-                <span className="row-data-num">( 4,252 )</span>
-              </label>
-            </div>
-
-            <div className="aside-row">
-              <input type="checkbox" name="" id="" />
-              <label>
-                <span className="row-data">Paid</span>
                 <span className="row-data-num">( 4,252 )</span>
               </label>
             </div>

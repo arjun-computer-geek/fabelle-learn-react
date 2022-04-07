@@ -7,7 +7,7 @@ import "./categories.css";
 export const Categories = () => {
   const {
     state: { loading, products, error },
-    filterState: { byRatings, sort },
+    filterState: { byRatings, sort, sortPrice },
   } = useProduct();
 
   const transformProducts = () => {
@@ -27,8 +27,16 @@ export const Categories = () => {
         (a, b) => b.numOfReviews - a.numOfReviews
       );
     }
-    if(sort === "newest"){
-      sortedProducts = sortedProducts.sort((a, b) =>a.createdAt > b.createdAt ? 1: -1)
+    if (sort === "newest") {
+      sortedProducts = sortedProducts.sort((a, b) =>
+        a.createdAt > b.createdAt ? 1 : -1
+      );
+    }
+    if (sortPrice === "free") {
+      sortedProducts = sortedProducts.filter((product) => product.price === 0);
+    }
+    if (sortPrice === "paid") {
+      sortedProducts = sortedProducts.filter((product) => product.price > 0);
     }
     return sortedProducts;
   };

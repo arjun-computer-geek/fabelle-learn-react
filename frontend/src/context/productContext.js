@@ -1,4 +1,9 @@
-import { clear, getRatings, sortProduct } from "actions/filterActions";
+import {
+  clear,
+  filterPrice,
+  getRatings,
+  sortProduct,
+} from "actions/filterActions";
 import { getProducts } from "actions/productActions";
 import { filterReducer } from "reducers/filterReducer";
 import { productReducer } from "reducers/productReducers";
@@ -31,11 +36,23 @@ const ProductProvider = ({ children }) => {
   const sortByCategory = (category) => {
     sortProduct(category, filterDispatch);
   };
+  const sortByPrice = (value) => {
+    filterPrice(value, filterDispatch);
+  };
   const clearFilter = () => {
-    clear(filterDispatch)
-  }
+    clear(filterDispatch);
+  };
   return (
-    <productContext.Provider value={{ state, filterState, filterByRatings, sortByCategory, clearFilter }}>
+    <productContext.Provider
+      value={{
+        state,
+        filterState,
+        filterByRatings,
+        sortByCategory,
+        clearFilter,
+        sortByPrice,
+      }}
+    >
       {children}
     </productContext.Provider>
   );
