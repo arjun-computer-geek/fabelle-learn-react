@@ -5,12 +5,13 @@ export const Sidebar = () => {
   const {
     filterByRatings,
     sortByCategory,
+    clearFilter
   } = useProduct();
   return (
     <>
       <aside>
         <div className="aside-container aside-header">
-          <div className="filter-btn">
+          <div className="filter-btn" onClick={clearFilter}>
             <i className="fa fa-filter"></i>
             <span> Clear</span> <span>Filters</span>
           </div>

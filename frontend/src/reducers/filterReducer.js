@@ -26,7 +26,7 @@ export const filterReducer = (state, action) => {
           return{
             byStock: false,
             byRatings: 0,
-            searchQuery: ""
+            searchQuery: "",
           }
     default:
       return state;
