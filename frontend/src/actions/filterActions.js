@@ -3,6 +3,7 @@ import {
   SORT_BY_CATEGORY,
   CLEAR_FILTERS,
   FILTER_BY_PRICE,
+  FILTER_BY_SEARCH,
 } from "constants/filterConstants";
 
 export const getRatings = async (rating, dispatch) => {
@@ -23,6 +24,12 @@ export const filterPrice = async (value, dispatch) => {
     payload: value,
   });
 };
+export const search = async(keyword, dispatch) => {
+    dispatch({
+        type: FILTER_BY_SEARCH,
+        payload: keyword
+    })
+}
 export const clear = async (dispatch) => {
   dispatch({
     type: CLEAR_FILTERS,

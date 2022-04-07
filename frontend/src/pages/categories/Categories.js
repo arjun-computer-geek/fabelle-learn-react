@@ -7,7 +7,7 @@ import "./categories.css";
 export const Categories = () => {
   const {
     state: { loading, products, error },
-    filterState: { byRatings, sort, sortPrice },
+    filterState: { byRatings, sort, sortPrice, searchQuery },
   } = useProduct();
 
   const transformProducts = () => {
@@ -37,6 +37,9 @@ export const Categories = () => {
     }
     if (sortPrice === "paid") {
       sortedProducts = sortedProducts.filter((product) => product.price > 0);
+    }
+    if (searchQuery){
+      sortedProducts = sortedProducts.filter(product => product.name.toLowerCase().includes(searchQuery))
     }
     return sortedProducts;
   };
