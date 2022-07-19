@@ -77,12 +77,22 @@ main .popular-courses .courses-container {
     gap: 2rem;
     padding: 1em;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: stretch;
     overflow-x: auto;
     
 }
-
+.card .card-img{
+    height: 10rem;
+    width: 100%;
+}
+.card .product-name{
+    font-size: 0.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 
 
 main .top-categories {
