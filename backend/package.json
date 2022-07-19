@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=PRODUCTION node index.js",
     "dev": "NODE_ENV=DEVELOPMENT nodemon index.js",
+    "win-dev": "set NODE_ENV=DEVELOPMENT && nodemon index.js",
     "prod": "NODE_ENV=PRODUCTION  nodemon index.js"
   },
   "author": "",
@@ -26,6 +27,6 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.19"
   }
 }
