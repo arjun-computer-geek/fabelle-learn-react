@@ -76,11 +76,14 @@ main .popular-courses .courses-container {
     display: flex;
     gap: 2rem;
     padding: 1em;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: stretch;
     overflow-x: auto;
+    
 }
+
+
 
 main .top-categories {
     flex-direction: column;

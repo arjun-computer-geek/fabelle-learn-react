@@ -9,7 +9,7 @@ export const Card = ({id, img,productName, productOwner, noOfReviews, price, rat
     
     return (
         <div className="card">
-            <img loading="lazy" src={img} alt="product" />
+            <img className='card-img' loading="lazy" src={img} alt="product" />
             <div className="card-container">
                 <h4 className="product-name">{productName}</h4>
                 <h3 className="product-owner">{productOwner}</h3>
