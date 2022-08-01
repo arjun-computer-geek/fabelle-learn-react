@@ -2,7 +2,7 @@ import { Slider } from "@mui/material";
 import { useProduct } from "context/productContext";
 import "./sidebar.css";
 export const Sidebar = () => {
-  const {filterState: {  sortPrice }, filterByRatings, sortByCategory, clearFilter, sortByPrice } =
+  const { filterState: { sortPrice }, filterByRatings, sortByCategory, clearFilter, sortByPrice } =
     useProduct();
   return (
     <>
@@ -55,7 +55,7 @@ export const Sidebar = () => {
           <div className="aside-content">
             <div className="aside-row">
               <label onClick={() => sortByPrice("free")} >
-                <input type="checkbox" checked={sortPrice === 'free' ? true: false}/>
+                <input type="checkbox" checked={sortPrice === 'free' ? true : false} />
                 <span className="row-data">Free</span>
                 <span className="row-data-num">( 4,252 )</span>
               </label>
@@ -63,7 +63,7 @@ export const Sidebar = () => {
 
             <div className="aside-row">
               <label onClick={() => sortByPrice("paid")}>
-                <input type="checkbox" checked={sortPrice === 'paid' ? true: false}/>
+                <input type="checkbox" checked={sortPrice === 'paid' ? true : false} />
                 <span className="row-data">Paid</span>
                 <span className="row-data-num">( 4,252 )</span>
               </label>

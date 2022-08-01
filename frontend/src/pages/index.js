@@ -1,3 +1,4 @@
+export { CourseDetails } from "./courseDetails/CourseDetails";
 export { Profile } from "./profile/Profile";
 export { Login } from "./login/Login";
 export { Wishlist } from "./wishlist/Wishlist";

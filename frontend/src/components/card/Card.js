@@ -16,7 +16,7 @@ export const Card = ({ id, img, productName, productOwner, noOfReviews, price, r
                 <h4 className="product-name">{productName}</h4>
                 <h3 className="product-owner">{productOwner}</h3>
                 <div className="product-ratings">
-                    <Rating name="half-rating-read" defaultValue={0} value={ratings} precision={0.5} readOnly />
+                    <Rating className='product-details-ratings' name="half-rating-read" defaultValue={0} value={ratings} precision={0.5} readOnly />
                     <span>({noOfReviews})</span>
                 </div>
                 <div className="product-price">&#8377;<span>{price <= 0 ? "Free" : price}</span></div>

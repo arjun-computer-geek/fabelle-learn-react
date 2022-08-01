@@ -86,6 +86,9 @@ main .popular-courses .courses-container {
     height: 10rem;
     width: 100%;
 }
+.card .card-img img{
+    height: 100%;
+}
 .card .product-name{
     font-size: 0.8rem;
     overflow: hidden;

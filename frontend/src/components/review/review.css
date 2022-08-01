@@ -1,0 +1,63 @@
+.review-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-container .review-search-bar {
+    background-color: var(--gray-90);
+    width: 80%;
+    position: relative;
+}
+
+.review-container .review-search-bar input {
+    height: 100%;
+    width: 90%;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--gray-45);
+}
+
+.review-container .review-search-bar input:focus {
+    outline: none;
+}
+
+.review-container .review-search-bar span {
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 15%;
+    right: -2%;
+}
+.review-container .review-search-bar span i{
+    color: var(--background-light);
+    font-size: 2rem;
+}
+
+.review-container .sort-btn {
+    padding: 0.4em;
+    border: 1px solid var(--gray-45);
+    position: relative;
+}
+
+.review-container .sort-btn:hover,
+.review-container .sort-btn select:hover {
+    background-color: var(--gray-00);
+    cursor: pointer;
+}
+
+.review-container .sort-btn span {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+
+.review-container .sort-btn select {
+    background-color: transparent;
+    margin: 0.5em;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
