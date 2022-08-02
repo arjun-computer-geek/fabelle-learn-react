@@ -1,6 +1,7 @@
 .review-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .review-container .review-search-bar {
@@ -11,7 +12,7 @@
 
 .review-container .review-search-bar input {
     height: 100%;
-    width: 90%;
+    width: 89%;
     border: none;
     padding: 1rem;
     font-size: 1rem;
@@ -60,4 +61,32 @@
     border: none;
     font-size: 1rem;
     outline: none;
+}
+
+.user-review{
+    padding: 1rem 1rem 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.user-review-data{
+    width: 95%;
+    padding-left: 1rem;
+}
+.user-review-data > h4{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* userImag */
+.user-img{
+    background-color: var(--gray-90);
+    color: var(--background-light);
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
