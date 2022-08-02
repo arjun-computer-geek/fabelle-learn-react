@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Footer, Navbar, ProtectedRoute } from "components";
 
 import { Route, Routes } from "react-router-dom";
-import { Categories, Home, Cart, Wishlist, Login, Profile } from "pages";
+import { Categories, Home, Cart, Wishlist, Login, Profile, CourseDetails} from "pages";
 
 const App = () => {
   return (
@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />}/>
-        
+        <Route path="/course" element={<CourseDetails />}/>
         {/* protectd Routes */}
         <Route element={<ProtectedRoute />} >
         <Route path="/profile" element={<Profile />} />

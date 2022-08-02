@@ -1,0 +1,92 @@
+.review-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.review-container .review-search-bar {
+    background-color: var(--gray-90);
+    width: 80%;
+    position: relative;
+}
+
+.review-container .review-search-bar input {
+    height: 100%;
+    width: 89%;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--gray-45);
+}
+
+.review-container .review-search-bar input:focus {
+    outline: none;
+}
+
+.review-container .review-search-bar span {
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 15%;
+    right: -2%;
+}
+.review-container .review-search-bar span i{
+    color: var(--background-light);
+    font-size: 2rem;
+}
+
+.review-container .sort-btn {
+    padding: 0.4em;
+    border: 1px solid var(--gray-45);
+    position: relative;
+}
+
+.review-container .sort-btn:hover,
+.review-container .sort-btn select:hover {
+    background-color: var(--gray-00);
+    cursor: pointer;
+}
+
+.review-container .sort-btn span {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+
+.review-container .sort-btn select {
+    background-color: transparent;
+    margin: 0.5em;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.user-review{
+    padding: 1rem 1rem 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.user-review-data{
+    width: 95%;
+    padding-left: 1rem;
+}
+.user-review-data > h4{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* userImag */
+.user-img{
+    background-color: var(--gray-90);
+    color: var(--background-light);
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

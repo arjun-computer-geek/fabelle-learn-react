@@ -10,7 +10,7 @@ export const getProducts = async (dispatch) => {
     dispatch({ type: ALL_PRODUCTS_REQUEST });
 
     const { data } = await axios.get(
-      "https://fabelle-learn-react.herokuapp.com/api/products"
+      "/api/products"
     );
     dispatch({
       type: ALL_PRODUCTS_SUCCESS,

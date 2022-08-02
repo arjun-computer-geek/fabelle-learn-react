@@ -2,7 +2,7 @@ import axios from "axios";
 import { ADD_TO_CART, REMOVE_ITEM_CART } from "../constants/cartConstants";
 
 export const addItemToCart = async (id, dispatch) => {
-  const { data } = await axios.get(`https://fabelle-learn-react.herokuapp.com/api/product/${id}`);
+  const { data } = await axios.get(`/api/product/${id}`);
   const productData = {
     id: data.product._id,
     name: data.product.name,

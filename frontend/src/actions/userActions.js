@@ -25,7 +25,7 @@ export const login = async (email, password, dispatch) => {
     };
 
     const { data:{user} } = await axios.post(
-      "https://fabelle-learn-react.herokuapp.com/api/login",
+      "/api/login",
       { email, password },
       config
     );
@@ -54,7 +54,7 @@ export const register = async (userData, dispatch) => {
     };
 
     const { data:{user} } = await axios.post(
-      "https://fabelle-learn-react.herokuapp.com/api/register",
+      "/api/register",
       userData,
       config
     );
@@ -77,7 +77,7 @@ export const loadUser = async (dispatch) => {
     dispatch({ type: LOAD_USER_REQUEST });
 
     const { data } = await axios.get(
-      "https://fabelle-learn-react.herokuapp.com/api/me"
+      "/api/me"
     );
 
     dispatch({
@@ -95,7 +95,7 @@ export const loadUser = async (dispatch) => {
 //Logout User
 export const logout = async (dispatch) => {
   try {
-    await axios.get("https://fabelle-learn-react.herokuapp.com/api/logout");
+    await axios.get("/api/logout");
 
     dispatch({
       type: LOGOUT_SUCCESS,

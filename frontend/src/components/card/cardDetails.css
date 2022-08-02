@@ -1,0 +1,211 @@
+.card-details-container {
+    background-color: var(--gray-85);
+    width: 100%;
+    color: var(--background-light);
+    padding: 0 5em;
+    height: 50vh;
+    display: flex;
+}
+
+
+.bold-description {
+    color: var(--background-light);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.sub-bold-description {
+    color: var(--background-light);
+    font-size: 1.5rem;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.card-details-container .product-ratings .css-34he1w-MuiRating-decimal {
+    background-color: rgba(255, 255, 255, 0.432)
+}
+
+.card-details-container .instructor a {
+    color: var(--yellow-light);
+}
+
+.card-details-container .card-details-left-container {
+    padding: 1rem 2rem;
+    line-height: 2rem;
+}
+
+.bottom-info-ribbon i {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+
+.bottom-info-ribbon i:nth-child(1) {
+    margin-left: 0;
+}
+
+.product-detail-card {
+    background-color: var(--background-light);
+    min-height: 35rem;
+    width: 21rem;
+    margin-top: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+/* Right side card */
+.course-preview {
+    background-color: red;
+    height: 12rem;
+    width: 100%;
+    position: relative;
+
+}
+
+.course-preview img {
+    width: 100%;
+    height: 100%;
+}
+
+.course-preview .play-btn {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.course-preview .play-btn p {
+    color: var(--background-light);
+    opacity: 1.0;
+    font-weight: 600;
+    position: absolute;
+    bottom: 2px;
+    left: 30%;
+    text-align: center;
+}
+
+.course-preview .play-btn img {
+    height: 5rem;
+    width: 5rem;
+}
+
+.product-detail-card .product-content {
+    padding: 1rem 2rem;
+}
+
+.product-detail-card .product-content .add-to-cart {
+    background-color: var(--love-light);
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    color: var(--background-light);
+}
+
+.product-detail-card .product-content .add-to-cart:hover {
+    background-color: var(--love-dark);
+}
+
+.product-detail-card .product-content .buy-now {
+    background-color: var(--background-light);
+    margin-top: 0.5rem;
+    border: 1px solid var(--gray-90);
+    border-radius: 0;
+    width: 100%;
+}
+
+.product-detail-card .product-content .buy-now:hover {
+    background-color: var(--gray-05);
+}
+
+.product-detail-card .product-price {
+    color: var(--gray-90);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.product-detail-card .product-discounted-price {
+    display: inline-block;
+    color: var(--gray-45);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+
+/* check list  */
+.bordered-container {
+    border: 1px solid var(--gray-45);
+    margin: 2rem 7rem;
+    padding: 1.5rem 2rem;
+    width: 57%;
+}
+
+.bordered-container h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.check-list-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.check-list-column {
+    flex: 50%;
+    font-size: 1rem;
+    list-style: none;
+}
+
+.check-list-column::before {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-image: url('../../../public/images/product-details/tick-icon-test.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-right: 0.5rem;
+}
+
+/* course content */
+.course-container{
+    margin: 2rem 7rem;
+    width: 57%;
+}
+.course-content .accordion{
+width: 100%;
+padding: 1rem;
+font-size: 1rem;
+text-align: left;
+font-weight: 600;
+background-color: var(--blue-light-10);
+border: 1px solid var(--gray-15);
+margin: -1px 0;
+transition: 0.4s;
+}
+.course-content .accordion .no-of-lecture{
+    float: right;
+    font-weight: 400;
+    color: var(--gray-45);
+}
+.course-content .accordion .fa-angle-down, .fa-angle-up{
+    margin-right: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.active, .accordion:hover {
+    background-color: var(--blue-light-20);
+  }
+.course-content .panel{
+    overflow: hidden;
+    background-color: var(--background-light);
+    border: 1px solid var(--gray-15);
+    margin: -1px 0;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+.course-content .panel .panel-container{
+    margin: 1rem;
+}
+

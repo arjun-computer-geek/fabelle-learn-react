@@ -1,0 +1,15 @@
+.course-content-list{
+    width: 100%;
+    height: 2rem;
+}
+.course-content-list i{
+    margin-right: 1rem;
+}
+.course-content-list a{
+    margin-right: 1rem;
+    text-decoration: underline;
+    color: var(--blue-dark);
+}
+.course-content-list .course-video-duration{
+    float: right;
+}
