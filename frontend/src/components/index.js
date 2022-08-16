@@ -1,5 +1,5 @@
-export { Review } from './review/Review'
 export { CardDetails } from './card/CardDetails'
+export { Review } from './review/Review'
 export { CourseContentList } from './course/CourseContentList'
 export { WishlistCard } from './card/WishlistCard'
 export {Card} from './card/Card'
