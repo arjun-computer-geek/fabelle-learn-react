@@ -33,7 +33,7 @@ export const Home = () => {
           <section className="popular-courses">
             <h2>Popular Courses</h2>
             <div className="courses-container">
-              {products.slice(0, 10).map((product, index) => (
+              {products?.slice(0, 10).map((product, index) => (
                 <React.Fragment key={index}>
                   <Link to="/categories">
                     <Card
