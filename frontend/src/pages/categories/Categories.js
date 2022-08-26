@@ -1,8 +1,10 @@
+import React from "react";
 import { Card, Loader, Sidebar } from "components";
 import { useProduct } from "context/productContext";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import "./categories.css";
+import { Link } from "react-router-dom";
 
 export const Categories = () => {
   const {
@@ -38,7 +40,7 @@ export const Categories = () => {
     if (sortPrice === "paid") {
       sortedProducts = sortedProducts.filter((product) => product.price > 0);
     }
-    if (searchQuery){
+    if (searchQuery) {
       sortedProducts = sortedProducts.filter(product => product.name.toLowerCase().includes(searchQuery))
     }
     return sortedProducts;
@@ -58,16 +60,21 @@ export const Categories = () => {
           <Sidebar />
           <div className="main-content">
             {transformProducts().map((product, index) => (
-              <Card
-                key={index}
-                id={product._id}
-                img={`https://fabelle-learn-react.herokuapp.com/public/uploads/${product.image}`}
-                productName={product.name}
-                productOwner={product.owner}
-                noOfReviews={product.numOfReviews}
-                ratings={product.ratings}
-                price={product.price}
-              />
+              <React.Fragment key={index}>
+                {/* <Link to={`/course/${product.name.replaceAll(" ", "-")}`}> */}
+                <Link to={`/course/${product._id}`}>
+
+                  <Card
+                    id={product._id}
+                    img={`https://fabelle-learn-react.herokuapp.com/public/uploads/${product.image}`}
+                    productName={product.name}
+                    productOwner={product.owner}
+                    noOfReviews={product.numOfReviews}
+                    ratings={product.ratings}
+                    price={product.price}
+                  />
+                </Link>
+              </React.Fragment>
             ))}
           </div>
         </main>

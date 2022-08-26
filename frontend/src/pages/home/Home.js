@@ -35,7 +35,9 @@ export const Home = () => {
             <div className="courses-container">
               {products?.slice(0, 10).map((product, index) => (
                 <React.Fragment key={index}>
-                  <Link to="/categories">
+
+                  {/* <Link to={`/course/${product.name.replaceAll(" ", "-")}`}> */}
+                  <Link to={`/course/${product._id}`}>
                     <Card
                       id={product._id}
                       img={`https://fabelle-learn-react.herokuapp.com/public/uploads/${product.image}`}

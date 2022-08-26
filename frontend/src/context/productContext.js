@@ -5,7 +5,7 @@ import {
   search,
   sortProduct,
 } from "actions/filterActions";
-import { getProducts } from "actions/productActions";
+import { getProducts, getSingleProduct } from "actions/productActions";
 import { useNavigate } from "react-router-dom";
 import { filterReducer } from "reducers/filterReducer";
 import { productReducer } from "reducers/productReducers";
@@ -30,14 +30,14 @@ const ProductProvider = ({ children }) => {
   // fetching data
   useEffect(() => {
     getProducts(dispatch);
-    
+
   }, []);
 
   useEffect(() => {
-    if(filterState.searchQuery){
+    if (filterState.searchQuery) {
       navigate('/categories')
     }
-  },[filterState.searchQuery])
+  }, [filterState.searchQuery])
 
   // functions
   const filterByRatings = (rating) => {
@@ -49,13 +49,16 @@ const ProductProvider = ({ children }) => {
   const sortByPrice = (value) => {
     filterPrice(value, filterDispatch);
   };
-  const searchProduct = (searchStr) =>{
+  const searchProduct = (searchStr) => {
     search(searchStr, filterDispatch)
   }
   const clearFilter = () => {
     clear(filterDispatch);
   };
 
+  const getAProduct = (id) => {
+    getSingleProduct(id, dispatch)
+  }
   return (
     <productContext.Provider
       value={{
@@ -65,7 +68,8 @@ const ProductProvider = ({ children }) => {
         sortByCategory,
         clearFilter,
         sortByPrice,
-        searchProduct
+        searchProduct,
+        getAProduct
       }}
     >
       {children}

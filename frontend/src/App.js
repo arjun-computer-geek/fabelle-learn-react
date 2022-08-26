@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />}/>
-        <Route path="/course" element={<CourseDetails />}/>
+        <Route path="/course/:courseTitle" element={<CourseDetails />}/>
         {/* protectd Routes */}
         <Route element={<ProtectedRoute />} >
         <Route path="/profile" element={<Profile />} />

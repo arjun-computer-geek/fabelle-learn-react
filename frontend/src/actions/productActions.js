@@ -3,6 +3,9 @@ import {
   ALL_PRODUCTS_REQUEST,
   ALL_PRODUCTS_SUCCESS,
   ALL_PRODUCTS_FAIL,
+  SINGLE_PRODUCT_REQUEST,
+  SINGLE_PRODUCT_SUCCESS,
+  SINGLE_PRODUCT_FAIL,
 } from "constants/productContants";
 
 export const getProducts = async (dispatch) => {
@@ -23,3 +26,23 @@ export const getProducts = async (dispatch) => {
     });
   }
 };
+
+export const getSingleProduct = async(id, dispatch) => {
+  try {
+    dispatch({ type: SINGLE_PRODUCT_REQUEST });
+
+    const { data } = await axios.get(
+      `https://fabelle-learn-react.herokuapp.com/api/product/${id}`
+    );
+    console.log(data)
+    dispatch({
+      type: SINGLE_PRODUCT_SUCCESS,
+      payload: data.product,
+    });
+  } catch (error) {
+    dispatch({
+      type: SINGLE_PRODUCT_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+}
