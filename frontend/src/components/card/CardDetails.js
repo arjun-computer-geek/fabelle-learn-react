@@ -3,8 +3,10 @@ import { Rating } from '@mui/material'
 import './cardDetails.css'
 import { CourseContentList } from 'components/course/CourseContentList'
 import { Review } from 'components/review/Review'
+import { useCart } from 'context/cartContext'
 
-export const CardDetails = ({product}) => {
+export const CardDetails = ({ product }) => {
+  const { addToCart } = useCart()
   const classToggler = (e) => {
     let panel = e.target.nextElementSibling
 
@@ -55,7 +57,7 @@ export const CardDetails = ({product}) => {
             <div className='product-content'>
               <h2 className='product-price'>&#8377;{product?.price}</h2>
               <span className='product-discounted-price'><s>&#8377;{3536}</s> 87 % off</span>
-              <button onClick={classToggler} className='btn add-to-cart'>Add to cart</button>
+              <button onClick={() => addToCart(product?._id)} className='btn add-to-cart' >Add to cart</button>
               <button onClick={classToggler} className='btn buy-now'>Buy now</button>
             </div>
           </div>

@@ -45,6 +45,7 @@ export const Home = () => {
                       productOwner={product.owner}
                       noOfReviews={product.numOfReviews}
                       price={product.price}
+                      ratings={product.ratings}
                     />
                   </Link>
                 </React.Fragment>
