@@ -4,7 +4,7 @@ import './cardDetails.css'
 import { CourseContentList } from 'components/course/CourseContentList'
 import { Review } from 'components/review/Review'
 
-export const CardDetails = () => {
+export const CardDetails = ({product}) => {
   const classToggler = (e) => {
     let panel = e.target.nextElementSibling
 
@@ -30,15 +30,15 @@ export const CardDetails = () => {
     <main className="container">
       <div className='card-details-container'>
         <div className='card-details-left-container'>
-          <h1 className='bold-description'>Become a Certified HTML, CSS, JavaScript Web Developer</h1>
-          <h2 className='sub-bold-description'>Complete coverage of HTML, CSS, Javascript while you Earn Four Respected Certifications</h2>
+          <h1 className='bold-description'>{product?.name}</h1>
+          <h2 className='sub-bold-description'>{product?.description}</h2>
           <div className="product-ratings">
-            <Rating name="half-rating-read" defaultValue={0} value={4.3} precision={0.5} readOnly />
-            <span>({2536}) {651000} students</span>
+            <Rating name="half-rating-read" defaultValue={0} value={product?.ratings} precision={0.5} readOnly />
+            <span>({product?.numOfReviews}) {651000} students</span>
           </div>
-          <div className='instructor'>Created by <a href="#">John Doe</a></div>
+          <div className='instructor'>Created by <a href="#">{product?.owner}</a></div>
           <div className='bottom-info-ribbon'>
-            <i className="fa fa-info-circle" aria-hidden="true"></i><span>Last updated</span>
+            <i className="fa fa-info-circle" aria-hidden="true"></i><span>{product?.createdAT}</span>
             <i className="fa fa-globe" aria-hidden="true"></i><span>English</span>
             <i className="fa fa-cc" aria-hidden="true"></i><span>English [Auto]</span>
           </div>
@@ -46,14 +46,14 @@ export const CardDetails = () => {
         <div className='card-details-right-container'>
           <div className='product-detail-card'>
             <div className='course-preview'>
-              <img src='/images/homepage/webdev.png' alt='course-image' />
+              <img src={`https://fabelle-learn-react.herokuapp.com/public/uploads/${product?.image}`} alt='course-image' />
               <button onClick={classToggler} className='play-btn'>
-                <img src='/images/product-details/play-icon.png' />
+                <img src="/images/product-details/play-icon.png" />
                 <p>Preview this course</p>
               </button>
             </div>
             <div className='product-content'>
-              <h2 className='product-price'>&#8377;499</h2>
+              <h2 className='product-price'>&#8377;{product?.price}</h2>
               <span className='product-discounted-price'><s>&#8377;{3536}</s> 87 % off</span>
               <button onClick={classToggler} className='btn add-to-cart'>Add to cart</button>
               <button onClick={classToggler} className='btn buy-now'>Buy now</button>
